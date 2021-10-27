@@ -78,9 +78,6 @@ int main(int argc, char**argv){
     
     //fonction de lecture+ecriture produit
     lectureProduit(nbPd);
-
-    //ouverture du fichier de vente
-    FILE* fileVente = NULL;
     pthread_mutex_lock(&mutexVentes);
         lectureVente(nbLecteurVentes);
     pthread_mutex_unlock(&mutexVentes);
@@ -89,7 +86,7 @@ int main(int argc, char**argv){
     pthread_t th1_lecteur;
     //boucle création thread en fonction de l'argument passé en paramètre
     for(int i=0; i<nbLecteur; i++){
-        
+
         pthread_create(th1_lecteur,NULL,lectureProduit,i);
     }
     //boucle pthreadjoin
