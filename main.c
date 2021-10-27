@@ -22,10 +22,13 @@ typedef struct _thread_data {
     product_data *products;
 } thread_data;
 
-void *initialisation(thread_data *data){
-    data.
+void initialisationValeur(){
+    
 }
 
+void *lecteur(){
+
+}
 
 int main(int argc, char**argv){
     //4 arguments 
@@ -49,7 +52,7 @@ int main(int argc, char**argv){
     {
         //boucle pour ajouter element par element
         for(int i =0; i <= nbPd; i++){
-            fscanf(fv, "%d", &tab[i]); // ajoute les cellule incrementer par i
+            fscanf(fv, "%d", &tab[i]); 
             printf("L'element est : %d \n", &tab[i]);
         }
         fclose(fv); // ferme le fichier
@@ -58,7 +61,7 @@ int main(int argc, char**argv){
     //ouverture du fichier de vente
     FILE* fileVente = NULL;
     pthread_mutex_lock(&mutexVentes);
-    fileVente = fopen("ventes.txt", "r+");
+        fileVente = fopen("ventes.txt", "r+");
     pthread_mutex_unlock(&mutexVentes);
 
     //déclaration du thread
@@ -73,11 +76,5 @@ int main(int argc, char**argv){
     for(int j=0; j<nbLecteur, j++){
         pthread_join(th1_lecteur[j],NULL);
     }
-
-    
-
-
-
-    
     return 0;
 }
