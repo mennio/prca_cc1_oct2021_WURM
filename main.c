@@ -38,18 +38,20 @@ int main(int argc, char**argv){
     int tab[nbPd] = {0}; 
     fv = fopen("produits.txt",r);// ouverture du fichier + lecture
     // si file != null alors on ajoute une cellule 
-    if (fichier != NULL)
+    if (fv != NULL)
     {
         //boucle pour ajouter element par element
         for(int i =0; i <= nbPd; i++){
-            fscanf(fichier, "%d", &tab[i]); // ajoute les cellule incrementer par i
+            fscanf(fv, "%d", &tab[i]); // ajoute les cellule incrementer par i
             printf("L'element est : %d", tab[i]);
         }
-        fclose(fichier); // ferme le fichier
+        fclose(fv); // ferme le fichier
     }
 
     //ouverture du fichier de vente
     FILE* fileVente = NULL;
     fileVente = fopen("ventes.txt", "r");
+
+    
     return 0;
 }
